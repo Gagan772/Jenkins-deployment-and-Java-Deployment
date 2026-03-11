@@ -1,0 +1,26 @@
+type Query {
+    getProducts: [Product]
+    getProductById(id: ID!): Product
+    getOrders: [Order]
+}
+
+type Mutation {
+    createProduct(name: String!, description: String, price: Float!, stock: Int!): Product
+}
+
+type Product {
+    id: ID!
+    name: String!
+    description: String
+    price: Float!
+    stock: Int!
+}
+
+type Order {
+    id: ID!
+    customerId: ID!
+    productId: ID!
+    quantity: Int!
+    totalPrice: Float!
+    orderDate: String!
+}
